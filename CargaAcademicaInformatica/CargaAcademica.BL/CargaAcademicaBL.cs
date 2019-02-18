@@ -8,8 +8,16 @@ namespace CargaAcademica.BL
 {
     public class CargaAcademicaBL
     {
+        Contexto _contexto;
+        public CargaAcademicaBL()
+        {
+            _contexto = new Contexto();
+        }
        public List<Asignatura> ObtenerAsignaturas()
         {
+
+            _contexto.Asignaturas.ToList();
+
             var Asignatura1 = new Asignatura();
 
             Asignatura1.Seccion = "1600";
