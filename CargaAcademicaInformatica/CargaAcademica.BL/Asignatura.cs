@@ -8,9 +8,14 @@ namespace CargaAcademica.BL
 {
     public class Asignatura
     {
-        public int Seccion { get; set; }
+        public string Seccion { get; set; }
         public string NumeroEdificio { get; set; }
         public string NombreAsignatura { get; set; }
         public string NombreCatedratico { get; set; }
+
+        public static object ObtenerAsignaturas()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

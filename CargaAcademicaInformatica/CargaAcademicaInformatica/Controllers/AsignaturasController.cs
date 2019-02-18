@@ -1,4 +1,5 @@
-﻿using CargaAcademicaInformatica.Models;
+﻿
+using CargaAcademica.BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,12 @@ namespace CargaAcademicaInformatica.Controllers
         // GET: Asignaturas
         public ActionResult Index()
         {
-            
-            return View();
+            var Asignatura = new CargaAcademicaBL();
+
+            var ListaAsignatura = Asignatura.ObtenerAsignaturas();
+
+
+            return View(ListaAsignatura);
         }
     }
 }

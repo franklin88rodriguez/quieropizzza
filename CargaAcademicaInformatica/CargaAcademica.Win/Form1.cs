@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CargaAcademica.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,15 @@ namespace CargaAcademica.Win
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola");
+            var Asingatura = new CargaAcademicaBL();
+
+            var ListaAsignaturas = Asingatura.ObtenerAsignaturas();
+
+            foreach (var Asignatura in ListaAsignaturas)
+            {
+                MessageBox.Show(Asignatura.Seccion);
+            }
+
         }
     }
 }

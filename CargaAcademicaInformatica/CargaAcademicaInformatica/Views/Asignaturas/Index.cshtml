@@ -1,8 +1,12 @@
-﻿
+﻿@model List<CargaAcademica.BL.Asignatura>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Asignaturas</h2>
+<h2>Asignaturas Disponibles</h2>
 
-
+@foreach (var Asignatura in Model)
+{
+    <p>@Asignatura.Seccion @Asignatura.NombreAsignatura @Asignatura.NombreCatedratico @Asignatura.NumeroEdificio</p>
+}
