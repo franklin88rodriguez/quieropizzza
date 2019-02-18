@@ -6,7 +6,35 @@
 
 <h2>Asignaturas Disponibles</h2>
 
-@foreach (var Asignatura in Model)
-{
-    <p>@Asignatura.Seccion @Asignatura.NombreAsignatura @Asignatura.NombreCatedratico @Asignatura.NumeroEdificio</p>
-}
+
+
+<table class="table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                 Seccion
+            </th>
+            <th>
+                Nombre de Asignatura
+            </th>
+            <th>
+                Catedratico
+            </th>
+            <th>
+                Edificio
+            </th>
+        </tr>
+
+    </thead>
+    @foreach (var Asignatura in Model)
+    {
+        <tr>
+            <td>@Asignatura.Seccion</td>
+            <td>@Asignatura.NombreAsignatura</td>
+            <td>@Asignatura.NombreCatedratico</td>
+            <td>@Asignatura.NumeroEdificio</td>
+        </tr>
+        
+    }
+
+</table>
