@@ -20,7 +20,52 @@ namespace CargaAcademica.WebAdmin.Controllers
         // GET: CensoMaster
         public ActionResult Index()
         {
-            return View();
+            var listadeCenso = _CensosMasterBL.ObtenerCensoDetalle();
+
+            return View(listadeCenso);
         }
+
+        public ActionResult Crear()
+        {
+            var nuevoCenso = new CensoMaestro();
+
+            return View(nuevoCenso);
+        }
+
+        [HttpPost]
+        public ActionResult Crear(CensoMaestro censo)
+        {
+            if (ModelState.IsValid)
+            {
+                _CensosMasterBL.GuardarCenso(censo);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(censo);
+        }
+
+
+        public ActionResult Editar(int id)
+        {
+            var censo = _CensosMasterBL.ObtenerCensoDetalle(id);
+
+            return View(censo);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(CensoMaestro censo)
+        {
+            if (ModelState.IsValid)
+            {
+                _CensosMasterBL.GuardarCenso(censo);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(censo);
+        }
+
+
     }
 }
