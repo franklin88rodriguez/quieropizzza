@@ -152,6 +152,9 @@
     <Content Include="Views\Alumno\Detalle.cshtml" />
     <Content Include="Views\Alumno\Eliminar.cshtml" />
     <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\CensoMaster\Crear.cshtml" />
+    <Content Include="Views\CensoMaster\Editar.cshtml" />
+    <Content Include="Views\CensoMaster\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -163,7 +166,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Imagenes\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\CensoMaster\" />
     <Folder Include="Views\Periodo\" />
   </ItemGroup>
   <ItemGroup>

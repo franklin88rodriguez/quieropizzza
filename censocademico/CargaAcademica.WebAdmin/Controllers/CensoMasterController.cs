@@ -12,10 +12,17 @@ namespace CargaAcademica.WebAdmin.Controllers
 
         CensoMaestroBL _CensosMasterBL;
 
+        PeriodoBL _PeriodoBL;
+
+        AlumnoBL _AlumnoBL;
+
         public CensoMasterController()//constructor para inicializar
         {
             _CensosMasterBL = new CensoMaestroBL();//inicializando variable _CensosMasterBL
 
+            _PeriodoBL = new PeriodoBL();
+
+            _AlumnoBL = new AlumnoBL();
         }
         // GET: CensoMaster
         public ActionResult Index()
@@ -28,6 +35,15 @@ namespace CargaAcademica.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevoCenso = new CensoMaestro();
+
+            var periodos = _PeriodoBL.ObtenerPeriodos();
+
+            var alumnos = _AlumnoBL.ObtenerAlumnos();
+
+            ViewBag.PeriodoId = new SelectList(periodos, "Id", "numero");
+            
+
+            ViewBag.AlumnoId = new SelectList(alumnos, "Id", "NombreAlumno");
 
             return View(nuevoCenso);
         }
