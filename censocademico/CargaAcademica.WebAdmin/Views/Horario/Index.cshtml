@@ -1,21 +1,21 @@
-﻿@model IEnumerable<CargaAcademica.BL.CensoMaestro>
+﻿@model IEnumerable<CargaAcademica.BL.Horarios>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Horarios";
 }
 
-<h3>Lista de Censos</h3>
+<h3>Lista de Horarios</h3>
 
 <p>
-    @Html.ActionLink("Crear Nuevo Censo", "Crear")
+    @Html.ActionLink("Crear Nuevo Horario", "Crear")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Alumno.NombreAlumno)
+            @Html.DisplayNameFor(model => model.Activo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Periodo.numero)
+            @Html.DisplayNameFor(model => model.Horario)
         </th>
         <th></th>
     </tr>
@@ -23,10 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Alumno.NombreAlumno)
+            @Html.DisplayFor(modelItem => item.Activo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Periodo.año) - @Html.DisplayFor(modelItem => item.Periodo.numero)
+            @Html.DisplayFor(modelItem => item.Horario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

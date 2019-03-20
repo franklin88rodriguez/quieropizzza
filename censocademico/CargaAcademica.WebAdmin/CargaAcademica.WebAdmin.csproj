@@ -121,6 +121,7 @@
     <Compile Include="Controllers\AsignaturasController.cs" />
     <Compile Include="Controllers\CensoMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HorarioController.cs" />
     <Compile Include="Controllers\PeriodosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,6 +156,10 @@
     <Content Include="Views\CensoMaster\Crear.cshtml" />
     <Content Include="Views\CensoMaster\Editar.cshtml" />
     <Content Include="Views\CensoMaster\Index.cshtml" />
+    <Content Include="Views\Horario\Crear.cshtml" />
+    <Content Include="Views\Horario\Editar.cshtml" />
+    <Content Include="Views\Horario\Eliminar.cshtml" />
+    <Content Include="Views\Horario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
