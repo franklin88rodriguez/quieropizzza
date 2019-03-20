@@ -44,6 +44,8 @@ namespace CargaAcademica.BL
                 var horaExistente = _Contexto.Horario.Find(hora.Id);
 
                 horaExistente.Id = hora.Id;
+                horaExistente.Activo = hora.Activo;
+                horaExistente.Horario = hora.Horario;
                 //periodoExistente.año = censo.;
 
             }
