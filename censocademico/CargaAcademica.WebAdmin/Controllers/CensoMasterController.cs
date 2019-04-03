@@ -27,7 +27,7 @@ namespace CargaAcademica.WebAdmin.Controllers
         // GET: CensoMaster
         public ActionResult Index()
         {
-            var listadeCenso = _CensosMasterBL.ObtenerCensoDetalle();
+            var listadeCenso = _CensosMasterBL.ObtenerCensos();
 
             return View(listadeCenso);
         }
@@ -36,14 +36,15 @@ namespace CargaAcademica.WebAdmin.Controllers
         {
             var nuevoCenso = new CensoMaestro();
 
-            var periodos = _PeriodoBL.ObtenerPeriodos();
+            var periodos = _PeriodoBL.ObtenerPeriodosActivos();
 
-            var alumnos = _AlumnoBL.ObtenerAlumnos();
+            var alumnos = _AlumnoBL.ObtenerAlumnosActivos();
+
 
             ViewBag.PeriodoId = new SelectList(periodos, "Id", "numero");
-            
 
             ViewBag.AlumnoId = new SelectList(alumnos, "Id", "NombreAlumno");
+
 
             return View(nuevoCenso);
         }

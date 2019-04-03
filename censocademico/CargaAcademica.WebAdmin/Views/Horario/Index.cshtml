@@ -4,10 +4,10 @@
     ViewBag.Title = "Horarios";
 }
 
-<h3>Lista de Horarios</h3>
+<h2>Horarios</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo Horario", "Crear")
+    @Html.ActionLink("Crear nuevo horario", "Crear")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Horario)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
+            @Html.ActionLink("Eliminar", "Elinar", new { id=item.Id })
         </td>
     </tr>
 }

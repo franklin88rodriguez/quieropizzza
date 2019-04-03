@@ -19,10 +19,23 @@ namespace CargaAcademica.BL
 
         public List<Asignatura> ObtenerAsignaturas()
         {
-            ListadeAsignaturas = _contexto.Asignaturas.ToList();
+            ListadeAsignaturas = _contexto.Asignaturas.OrderBy(r => r.NombreAsignatura).ToList();
 
             return ListadeAsignaturas;
+
         }
+        public List<Asignatura> ObtenerAsignaturasActivos()
+
+        {
+            ListadeAsignaturas = _contexto.Asignaturas
+
+                 .Where(r => r.Activo == true)
+                 .OrderBy(r => r.NombreAsignatura )
+                .ToList();
+            
+            return ListadeAsignaturas;
+        }
+
 
         public void GuardarAsignatura(Asignatura asignatura)
         {
@@ -38,6 +51,7 @@ namespace CargaAcademica.BL
                 asignaturaExistente.NumeroEdificio = asignatura.NumeroEdificio;
                 asignaturaExistente.NombreAsignatura = asignatura.NombreAsignatura;
                 asignaturaExistente.NombreCatedratico = asignatura.NombreCatedratico;
+                asignaturaExistente.Activo = asignatura.Activo;
             }
 
             _contexto.SaveChanges();

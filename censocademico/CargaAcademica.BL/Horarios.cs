@@ -14,7 +14,7 @@ namespace CargaAcademica.BL
 
         [Required(ErrorMessage = "Este campo no puede quedar vacio")]
         public string Horario { get; set; }
-
+        
 
     }
 }

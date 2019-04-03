@@ -11,6 +11,7 @@ namespace CargaAcademica.BL
         public int Id  { get; set; }
         public int numero { get; set; }
         public int año { get; set; }
-    //    public Boolean activo { get; set; }
+        public bool Activo { get; set; }
+        //    public Boolean activo { get; set; }
     }
 }

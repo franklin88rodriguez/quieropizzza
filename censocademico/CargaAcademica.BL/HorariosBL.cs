@@ -19,16 +19,16 @@ namespace CargaAcademica.BL
 
         public List<Horarios> ObtenerHorarios()
         {
-            HorarioBL = _Contexto.Horario.ToList();//para traer la tabla horario
+            HorarioBL = _Contexto.Horarios.ToList();//para traer la tabla horario
 
             return HorarioBL;
         }
 
         public void EliminarHorario(int id)//eliminando un horario
         {
-            var horario = _Contexto.Horario.Find(id);
+            var horario = _Contexto.Horarios.Find(id);
 
-            _Contexto.Horario.Remove(horario);
+            _Contexto.Horarios.Remove(horario);
             _Contexto.SaveChanges();
         }
 
@@ -37,11 +37,11 @@ namespace CargaAcademica.BL
         {
             if (hora.Id == 0)
             {
-                _Contexto.Horario.Add(hora);
+                _Contexto.Horarios.Add(hora);
             }
             else
             {
-                var horaExistente = _Contexto.Horario.Find(hora.Id);
+                var horaExistente = _Contexto.Horarios.Find(hora.Id);
 
                 horaExistente.Id = hora.Id;
                 horaExistente.Activo = hora.Activo;
@@ -54,9 +54,9 @@ namespace CargaAcademica.BL
         }
 
 
-        public Horarios ObtenerHorarios (int id)
+        public Horarios ObtenerHorarios(int id)
         {
-            var hora = _Contexto.Horario.Find(id);
+            var hora = _Contexto.Horarios.Find(id);
 
             return hora;
         }

@@ -33,24 +33,21 @@ namespace CargaAcademica.WebAdmin.Controllers
         }
 
         [HttpPost]//validacion
-        public ActionResult Crear (Horarios horario)
+        public ActionResult Crear(Horarios horarios)
         {
             if (ModelState.IsValid)//validacion con estructura if que evalua si el model state es valio.
                                    //entonces permite guardar. 
             {
-             /*   if (imagen != null)
-                {
-                    alumno.UrlImagen = GuardarImagen(imagen);
-                }*/
+                
 
-                _HorarioBL.GuardarHorario(horario);
+                _HorarioBL.GuardarHorario(horarios);
 
 
                 return RedirectToAction("Index");
             }
 
 
-            return View(horario);
+            return View(horarios);
         }
         public ActionResult Editar(int Id)
         {
@@ -60,43 +57,36 @@ namespace CargaAcademica.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Horarios hora)
+        public ActionResult Editar(Horarios horarios)
         {
             if (ModelState.IsValid)
             {
-                /*if(alumno.Id != alumno.Id.Trim())
-                {
-
-                }*/
-
-            /*    if (imagen != null)
-                {
-                    alumno.UrlImagen = GuardarImagen(imagen);
-                }*/
-                _HorarioBL.GuardarHorario(hora);
+               
+                    
+                _HorarioBL.GuardarHorario(horarios);
 
                 return RedirectToAction("Index");//pendiente index tambien
             }
 
-            return View(hora);
+            return View(horarios);
         }
 
 
         public ActionResult Detalle(int Id)
         {
-            var hora = _HorarioBL.ObtenerHorarios(Id);
+            var horarios = _HorarioBL.ObtenerHorarios(Id);
 
-            return View(hora);
+            return View(horarios);
         }
 
         [HttpPost]
-        public ActionResult Eliminar(Horarios horario)
+        public ActionResult Eliminar(Horarios horarios)
         {
-            _HorarioBL.EliminarHorario(horario.Id);
+            _HorarioBL.EliminarHorario(horarios.Id);
 
             return RedirectToAction("Index");//pendiente index
         }
 
-       
+
     }
 }
